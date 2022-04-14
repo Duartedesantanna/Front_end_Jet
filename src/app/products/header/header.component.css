@@ -1,0 +1,8 @@
+.toobar-banner{
+  height: 200px;
+}
+.toobar-banner span{
+  position: absolute;
+  left: 45%;
+
+}

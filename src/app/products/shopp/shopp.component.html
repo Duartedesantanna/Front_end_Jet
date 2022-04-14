@@ -1,0 +1,26 @@
+
+  <mat-grid-list cols="4" rowHeight="600px">
+    <mat-grid-tile *ngFor="let card of dataSource">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{card.nome}}</mat-card-title>
+
+        </mat-card-header>
+        <img mat-card-image class="imagem" src="http://localhost:3000/upload/produtos/{{card.imagem}}" alt={{card.imagem}}>
+        <mat-card-content>
+          <p>
+            <br>
+            <b>R${{card.preco}}</b>
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="detailsProductClick(card)" color="primary">
+            Detalhes
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+

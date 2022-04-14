@@ -1,0 +1,16 @@
+table {
+  width: 100%;
+}
+
+.container{
+  padding: 10px 80px;
+}
+
+.button-cadastro{
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  width: 100%;
+}
+
+

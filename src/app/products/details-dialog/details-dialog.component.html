@@ -1,0 +1,23 @@
+
+<h1 matDialogTitle>Detalhes Produto</h1>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title><b>{{data.nome}}</b></mat-card-title>
+
+  </mat-card-header>
+  <img mat-card-image class="imagem" src="http://localhost:3000/upload/produtos/{{data.imagem}}" alt={{data.imagem}}>
+  <mat-card-content>
+    <p>
+      <b>Produto:</b>{{data.nome}}<br><br>
+      <b>Descrição:</b>{{data.descricao}}<br><br>
+      <b>Preço:</b>R${{data.preco}}<br><br>
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onCloseClick()">Fechar</button>
+</div>
+

@@ -1,0 +1,50 @@
+<h1 *ngIf="!isChange" matDialogTitle>Criar Produto</h1>
+<h1 *ngIf="isChange" matDialogTitle>Editar Produto</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)] = "data.nome">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Imagem</mat-label>
+    <div class="myfilebrowser">
+
+      <mat-toolbar>
+
+        <input *ngIf="isChange" matInput [(ngModel)] = "data.imagem" readonly  />
+        <input *ngIf="!isChange" matInput [(ngModel)] = "data.imagem" readonly  />
+
+        <button mat-flat-button color="primary">
+          Buscar
+        </button>
+
+      </mat-toolbar>
+
+      <input type="file" #UploadFileInput id="fileUpload" (change)="fileChangeEvent($event)" name="fileUpload"
+        multiple="multiple" accept="image/*" />
+
+    </div>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Descrição</mat-label>
+    <input matInput [(ngModel)] = "data.descricao">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Estoque</mat-label>
+    <input matInput [(ngModel)] = "data.estoque">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-slide-toggle [(ngModel)]="data.status">Status Produto: {{data.status}}</mat-slide-toggle>
+    <input hidden="true" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Preço (BR)</mat-label>
+    <input matInput [(ngModel)] = "data.preco">
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Cancelar</button>
+  <button mat-button *ngIf="!isChange" (click)="onCadastroClick()" cdkFocusInitial>Cadastrar</button>
+  <button mat-button *ngIf="isChange" (click)="onCadastroClick()" cdkFocusInitial>Editar</button>
+</div>
